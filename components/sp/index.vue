@@ -1,18 +1,34 @@
 <template>
-  <pc-index v-if="$device.isDesktop"></pc-index>
-  <sp-index v-else-if="$device.isMobile"></sp-index>
+  <div class="container">
+    <div>
+      <Logo />
+      <h1 class="title">
+        SP Index
+      </h1>
+      <div class="links">
+        <a
+          href="https://nuxtjs.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="button--green"
+        >
+          Documentation
+        </a>
+        <a
+          href="https://github.com/nuxt/nuxt.js"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="button--grey"
+        >
+          GitHub
+        </a>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
-import PcIndex from "~/components/pc/index.vue";
-import SpIndex from "~/components/sp/index.vue";
-
-export default {
-  components: {
-    PcIndex,
-    SpIndex,
-  },
-}
+export default {}
 </script>
 
 <style>

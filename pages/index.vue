@@ -1,16 +1,17 @@
 <template>
-  <pc-index v-if="$device.isDesktop"></pc-index>
-  <sp-index v-else-if="$device.isMobile"></sp-index>
+  <mobile-index v-if="$device.isMobile" />
+  <desktop-index v-else-if="$device.isDesktop" />
 </template>
 
 <script>
-import PcIndex from "~/components/pc/index.vue";
-import SpIndex from "~/components/sp/index.vue";
+import DesktopIndex from "~/components/desktop/index.vue";
+import MobileIndex from "~/components/mobile/index.vue";
 
 export default {
+  layout: (ctx) => ctx.isMobile ? 'mobile' : 'desktop',
   components: {
-    PcIndex,
-    SpIndex,
+    DesktopIndex,
+    MobileIndex,
   },
 }
 </script>
